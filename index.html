@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>HORROR HUB - 공포 게임 큐레이션</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container flex-between">
+            <h1 class="logo">HORROR HUB</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" onclick="showPage('home')">홈</a></li>
+                    <li><a href="#" onclick="showPage('recommend')">오늘의 게임 추천</a></li>
+                    <li><a href="#" onclick="showPage('minigame')">미니게임</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="home-page">
+            <h2 class="section-title">인기 게임 추천</h2>
+            <div class="game-grid" id="popular-games">
+                </div>
+        </section>
+
+        <section id="recommend-page" style="display:none;">
+            <h2 class="section-title">게임 추천</h2>
+            <div class="checklist">
+                <p style="font-size:110%;">선호하는 공포 요소를 선택하세요!</p>
+                <label><input type="checkbox" class="like-filter" value="점프스케어"> 점프 스케어</label>
+                <br>
+                <label><input type="checkbox" class="like-filter" value="고어"> 고어</label>
+                <br>
+                <label><input type="checkbox" class="like-filter" value="심리적 압박"> 심리적 압박</label>
+                <br><br>
+                <p style="font-size:110%;">선호하지 않는 공포 요소를 선택하세요!</p>
+                <label><input type="checkbox" class="hate-filter" value="점프스케어"> 점프 스케어</label>
+                <br>
+                <label><input type="checkbox" class="hate-filter" value="고어"> 고어</label>
+                <br>
+                <label><input type="checkbox" class="hate-filter" value="심리적 압박"> 심리적 압박</label>
+                <br><br>
+                <button class="btn-main" onclick="recommendGame()">분석하기</button>
+                <div id="recommend-result"></div>
+            </div>
+        </section>
+            
+        <section id="minigame-page" style="display:none;">
+            <h2 class="section-title">탈출 (놀람주의)</h2>
+            <div class="game-container" style="text-align: center;">
+                <canvas id="gameCanvas" width="600" height="400" style="border: 2px solid #333; background: #000;"></canvas>
+                <img id="scareGif" src="image/scare.gif"
+                    style="display:none;
+                    position:absolute;
+                    top:0;
+                    left:50%;
+                    transform:translateX(-50%);
+                    width:600px;
+                    height:400px;
+                    pointer-events:none;">
+                <p>화면을 클릭한 후 WASD로 이동하세요. 빨간 문을 찾으세요.</p>
+             </div>  
+        </section>
+    </main>
+
+    <footer>
+        <div class="container flex-between">
+            <div class="shop-links">
+                판매처 연결: <a href="#">Steam</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <div id="scareOverlay">
+    <img src="image/scare.gif" alt="scare">
+    </div>
+</body>
+</html>
