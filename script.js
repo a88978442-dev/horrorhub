@@ -78,6 +78,54 @@ function showPage(pageId) {
 
 
 // =========================
+// 3-1. 게임 추천
+// =========================
+
+function recommendGame() {
+
+    const likes = [...document.querySelectorAll('.like-filter:checked')]
+        .map(el => el.value);
+
+    const hates = [...document.querySelectorAll('.hate-filter:checked')]
+        .map(el => el.value);
+
+    // 같은 항목을 좋아함/싫어함에 동시에 체크한 경우
+    if (likes.some(item => hates.includes(item))) {
+        alert("같은 요소를 좋아함과 싫어함에 동시에 선택할 수 없습니다.");
+        return;
+    }
+
+    let bestGame = null;
+    let bestScore = -999;
+
+    games.forEach(game => {
+        let score = 0;
+
+        game.tags.forEach(tag => {
+            if (likes.includes(tag)) score += 2;
+            if (hates.includes(tag)) score -= 3;
+        });
+
+        if (score > bestScore) {
+            bestScore = score;
+            bestGame = game;
+        }
+    });
+
+    const result = document.getElementById('recommend-result');
+
+    result.innerHTML = `
+        <h3>추천 게임: ${bestGame.title}</h3>
+        <button id="go-game" class="btn-main">게임 페이지로 이동</button>
+    `;
+
+    document.getElementById('go-game').addEventListener('click', () => {
+        window.open(bestGame.link, '_blank');
+    });
+}
+
+
+// =========================
 // 4. 게임 상태
 // =========================
 
