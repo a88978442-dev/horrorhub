@@ -89,7 +89,6 @@ function recommendGame() {
     const hates = [...document.querySelectorAll('.hate-filter:checked')]
         .map(el => el.value);
 
-    // 같은 항목을 좋아함/싫어함에 동시에 체크한 경우
     if (likes.some(item => hates.includes(item))) {
         alert("같은 요소를 좋아함과 싫어함에 동시에 선택할 수 없습니다.");
         return;
@@ -233,7 +232,7 @@ function draw() {
 
 
 // =========================
-// 9. 갑툭튀
+// 9. 깜작 놀래키는 장면
 // =========================
 
 function triggerJumpScare() {
