@@ -8,18 +8,21 @@ const games = [
         tag: "심리적 압박",
         tags: ["점프스케어", "심리적 압박"],
         link: "https://store.steampowered.com/app/238320/Outlast/"
+        image: "image/outlast.jpg"
     },
     {
         title: "레지던트 이블",
         tag: "좀비",
         tags: ["점프스케어", "고어"],
         link: "https://www.residentevil.com/"
+        image: "image/ResidentEvil.png"
     },
     {
         title: "암네시아",
         tag: "코즈믹 호러",
         tags: ["심리적 압박"],
         link: "https://store.steampowered.com/app/57300/Amnesia_The_Dark_Descent/"
+        image: "image/Amnesia.jpg"
     }
 ];
 
@@ -36,12 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
         card.className = 'game-card';
 
         card.innerHTML = `
-            <div style="height:200px; background:#333;"></div>
-            <div style="padding:15px;">
-                <h3>${game.title}</h3>
-                <p style="color:#888; font-size:0.8rem;">#${game.tag}</p>
-            </div>
-        `;
+        <img src="${game.image}" alt="${game.title}" class="game-image">
+
+        <div style="padding:15px;">
+            <h3>${game.title}</h3>
+            <p style="color:#888; font-size:0.8rem;">#${game.tag}</p>
+        </div>
+    `;
 
         card.style.cursor = 'pointer';
 
