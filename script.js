@@ -39,13 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
         card.className = 'game-card';
 
         card.innerHTML = `
-        <img src="${game.image}" alt="${game.title}" class="game-image">
+    <img
+        src="${game.image}"
+        alt="${game.title}"
+        style="width:100%; height:200px; object-fit:cover;"
+    >
 
-        <div style="padding:15px;">
-            <h3>${game.title}</h3>
-            <p style="color:#888; font-size:0.8rem;">#${game.tag}</p>
-        </div>
-    `;
+    <div style="padding:15px;">
+        <h3>${game.title}</h3>
+        <p style="color:#888; font-size:0.8rem;">#${game.tag}</p>
+    </div>
+`;
 
         card.style.cursor = 'pointer';
 
