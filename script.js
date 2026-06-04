@@ -7,21 +7,21 @@ const games = [
         title: "아웃라스트",
         tag: "심리적 압박",
         tags: ["점프스케어", "심리적 압박"],
-        link: "https://store.steampowered.com/app/238320/Outlast/"
+        link: "https://store.steampowered.com/app/238320/Outlast/",
         image: "image/outlast.jpg"
     },
     {
         title: "레지던트 이블",
         tag: "좀비",
         tags: ["점프스케어", "고어"],
-        link: "https://www.residentevil.com/"
+        link: "https://www.residentevil.com/",
         image: "image/ResidentEvil.png"
     },
     {
         title: "암네시아",
         tag: "코즈믹 호러",
         tags: ["심리적 압박"],
-        link: "https://store.steampowered.com/app/57300/Amnesia_The_Dark_Descent/"
+        link: "https://store.steampowered.com/app/57300/Amnesia_The_Dark_Descent/",
         image: "image/Amnesia.jpg"
     }
 ];
